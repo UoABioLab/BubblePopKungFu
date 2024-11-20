@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="background">
-      <img src="/Assets/dojo.jpg" alt="dojo background" class="background-image" />
+      <img src="/BubblePopKungFu/Assets/dojo.jpg" alt="dojo background" class="background-image" />
       <div class="ground"></div>
     </div>
     <Game />

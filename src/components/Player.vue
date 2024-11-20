@@ -19,11 +19,11 @@ const props = defineProps({
 const currentImage = computed(() => {
   switch (props.legState) {
     case 'leftUp':
-      return '/Assets/yellow_left.png'
+      return '/BubblePopKungFu/Assets/yellow_left.png'
     case 'rightUp':
-      return '/Assets/yellow_right.png'
+      return '/BubblePopKungFu/Assets/yellow_right.png'
     default:
-      return '/Assets/yellow_front.png'
+      return '/BubblePopKungFu/Assets/yellow_front.png'
   }
 })
 // 计算玩家位置样式

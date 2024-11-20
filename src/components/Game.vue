@@ -190,8 +190,8 @@ const legTimers = reactive({
 })
 // 音效系统 - 只保留必要的音效
 const sounds = reactive({
-  pop: new Audio('/Assets/pop_sound.mp3'),  // 气球爆炸音效
-  miss: new Audio('/Assets/splash.wav')      // 失败音效
+  pop: new Audio('/BubblePopKungFu/Assets/pop_sound.mp3'),  // 气球爆炸音效
+  miss: new Audio('/BubblePopKungFu/Assets/splash.wav')      // 失败音效
 })
 // 初始化音效
 const initSounds = () => {
@@ -228,7 +228,7 @@ onUnmounted(() => {
   })
 })
 // 添加背景音乐
-const bgMusic = new Audio('/Assets/kung_fu_music.mp3')
+const bgMusic = new Audio('/BubblePopKungFu/Assets/kung_fu_music.mp3')
 bgMusic.loop = true  // 循环播
 bgMusic.volume = 0.5 // 设置音量
 // 游戏循
