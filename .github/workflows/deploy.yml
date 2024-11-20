@@ -12,11 +12,31 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v3
+      
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: npm ci
-      - run: npm run build
+          registry-url: https://registry.npmmirror.com
+      
+      # 配置 npm 使用淘宝镜像
+      - name: Setup npm
+        run: |
+          npm config set registry https://registry.npmmirror.com
+          npm config set disturl https://npmmirror.com/dist
+          npm config set sass_binary_site https://npmmirror.com/mirrors/node-sass
+      
+      # 添加重试机制
+      - name: Install dependencies
+        run: |
+          for i in 1 2 3; do
+            npm ci && break
+            echo "Retry $i..."
+            sleep 5
+          done
+      
+      - name: Build
+        run: npm run build
+      
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
